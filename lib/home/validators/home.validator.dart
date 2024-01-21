@@ -1,7 +1,9 @@
+import 'package:hero_game/core/localization/translate.helper.dart';
+
 abstract class HomeValidator {
   static String? hobbieValidator(String? input) {
-    if (input?.isEmpty ?? true) return "Hobbie is required";
-    if (input!.length < 2) return "Invalid hobbie";
+    if (input?.isEmpty ?? true) return TranslateHelper.requiredHobby;
+    if (input!.length < 2) return TranslateHelper.invalidHobby;
     return null;
   }
 }

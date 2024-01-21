@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
-import 'package:hero_game/core/models/hobby.model.dart';
-import 'package:hero_game/core/snackbar/app.snackbar.dart';
+import '/core/localization/translate.helper.dart';
+import '/core/models/hobby.model.dart';
+import '/core/snackbar/app.snackbar.dart';
 import '/core/models/models.dart';
 
 class FirebaseStoreService extends GetxService {
@@ -35,7 +36,7 @@ class FirebaseStoreService extends GetxService {
   Future<void> addHobby(String uuid, Hobby hobby) async {
     try {
       await instace.collection("users").doc(uuid).collection("hobbies").add(hobby.toJson());
-      AppSnackbar.success("Hobby Added Successed");
+      AppSnackbar.success(TranslateHelper.adddedHobbySuccessed);
     } catch (e) {
       print(e);
     }

@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '/core/localization/translate.helper.dart';
 
 class LoadingDialog extends StatelessWidget {
   const LoadingDialog({super.key});
@@ -22,14 +23,14 @@ class LoadingDialog extends StatelessWidget {
               ),
             ),
           ),
-          const Column(
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CupertinoActivityIndicator(radius: 15.0),
-              SizedBox(height: 30.0),
+              const CupertinoActivityIndicator(radius: 15.0),
+              const SizedBox(height: 30.0),
               Text(
-                'Loading, please wait..',
-                style: TextStyle(
+                TranslateHelper.pleaseWait,
+                style: const TextStyle(
                   color: Colors.black54,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w500,

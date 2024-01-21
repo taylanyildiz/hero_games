@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/core/localization/translate.helper.dart';
 import '/home/validators/home.validator.dart';
 import '/home/widgets/widgets.dart';
 import '../controllers/home.controller.dart';
@@ -33,7 +34,7 @@ class HomePage extends GetView<HomeController> {
       actions: [
         TextButton(
           onPressed: controller.onLogout,
-          child: const Text("Logout"),
+          child: Text(TranslateHelper.logout),
         ),
       ],
     );
@@ -46,7 +47,7 @@ class HomePage extends GetView<HomeController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Hobbies",
+            TranslateHelper.hobbies,
             style: Get.textTheme.labelLarge,
           ),
           Form(

@@ -1,1 +1,46 @@
-abstract class TranslateHelper {}
+import 'package:get/get.dart';
+
+abstract class TranslateHelper {
+  static String get email => "email".tr;
+  static String get password => "password".tr;
+  static String get login => "login".tr;
+  static String get enterEmail => "enterEmail".tr;
+  static String get youCanChangeLater => "youCanChangeLater".tr;
+  static String get information => "information".tr;
+  static String get complateYourRegistration => "complateYourRegistration".tr;
+  static String get next => "next".tr;
+  static String get done => "done".tr;
+  static String get logout => "logout".tr;
+  static String get noFoundHobbies => "noFoundHobbies".tr;
+  static String get hobbies => "hobbies".tr;
+  static String get sureLogout => "sureLogout".tr;
+  static String get ok => "ok".tr;
+  static String get cancel => "cancel".tr;
+  static String get adddedHobbySuccessed => "adddedHobbySuccessed".tr;
+  static String get loginSuccessed => "loginSuccessed".tr;
+  static String get registrationSuccessed => "registrationSuccessed".tr;
+  static String get registrationFailed => "registrationFailed".tr;
+  static String get loginFailed => "loginFailed".tr;
+  static String get name => "name".tr;
+  static String get biography => "biography".tr;
+  static String get biographyHint => "biographyHint".tr;
+  static String get birthDate => "birthDate".tr;
+  static String get confirmPassword => "confirmPassword".tr;
+  static String get emailRequired => "emailRequired".tr;
+  static String get invalidEmail => "invalidEmail".tr;
+  static String get passwordRequired => "passwordRequired".tr;
+  static String get nameRueqired => "nameRueqired".tr;
+  static String get invalidName => "invalidName".tr;
+  static String get biographyRequired => "biographyRequired".tr;
+  static String get invalidBiography => "invalidBiography".tr;
+  static String get weakPassword => "weakPassword".tr;
+  static String get notComparePasswords => "notComparePasswords".tr;
+  static String get birthDateRequired => "birthDateRequired".tr;
+  static String get invalidBirthdate => "invalidBirthdate".tr;
+  static String get logoutSuccessed => "logoutSuccessed".tr;
+  static String get doNotAcccount => "doNotAcccount".tr;
+  static String get account => "account".tr;
+  static String get pleaseWait => "pleaseWait".tr;
+  static String get requiredHobby => "requiredHobby".tr;
+  static String get invalidHobby => "invalidHobby".tr;
+}

@@ -1,10 +1,20 @@
+import '/core/localization/translate.helper.dart';
 import '/register/entities/entities.dart';
 
 /// Register email page cation object
-RegisterCaptionEntity get emailCaption => const RegisterCaptionEntity("Email", "Enter your email address");
+RegisterCaptionEntity get emailCaption => RegisterCaptionEntity(
+      TranslateHelper.email,
+      TranslateHelper.enterEmail,
+    );
 
 /// Register information page cation object
-RegisterCaptionEntity get infoCaption => const RegisterCaptionEntity("Information", "You can change it later");
+RegisterCaptionEntity get infoCaption => RegisterCaptionEntity(
+      TranslateHelper.information,
+      TranslateHelper.youCanChangeLater,
+    );
 
 /// Register password page cation object
-RegisterCaptionEntity get passwordCaption => const RegisterCaptionEntity("Password", "Complate your registration by setting your password");
+RegisterCaptionEntity get passwordCaption => RegisterCaptionEntity(
+      TranslateHelper.password,
+      TranslateHelper.complateYourRegistration,
+    );

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/core/localization/translate.helper.dart';
 import '/core/widgets/widgets.dart';
-import '../../core/models/hobby.model.dart';
+import '/core/models/hobby.model.dart';
 import '/home/controllers/home.controller.dart';
 import 'widgets.dart';
 
@@ -17,7 +18,7 @@ class HobbyList extends GetView<HomeController> {
       builder: (context, snapshot) {
         if (snapshot.hasError) return Text("Error: ${snapshot.error}");
         if (!snapshot.hasData) return _buildLoading;
-        if (snapshot.data!.isEmpty) return const EmptyBox(title: "No Found Hobbies");
+        if (snapshot.data!.isEmpty) return EmptyBox(title: TranslateHelper.noFoundHobbies);
         return _buildList(snapshot.data!);
       },
     );

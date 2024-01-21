@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/core/localization/translate.helper.dart';
 import '../controllers/login.controler.dart';
 
 class RegisterButton extends GetView<LoginController> {
@@ -16,12 +17,11 @@ class RegisterButton extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return RichText(
       text: TextSpan(
-        text: "",
         style: Get.textTheme.bodyMedium,
         children: [
-          const TextSpan(text: "You don't have an "),
+          TextSpan(text: TranslateHelper.doNotAcccount),
           TextSpan(
-              text: "account",
+              text: TranslateHelper.account,
               recognizer: TapGestureRecognizer()..onTap = _onTap,
               style: Get.textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.bold,

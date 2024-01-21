@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/core/localization/translate.helper.dart';
 import '/register/validators/reigster.validator.dart';
 import '/register/data/register-caption.data.dart';
 import '/core/widgets/widgets.dart';
@@ -21,7 +22,7 @@ class RegisterEmailPage extends GetView<RegisterController> {
             children: [
               RegisterCaption(caption: emailCaption),
               TextOutlinedLabelField(
-                label: "Email",
+                label: TranslateHelper.email,
                 inputType: TextInputType.emailAddress,
                 controller: controller.emailController,
                 prefixIcon: const Icon(Icons.mail),
@@ -36,6 +37,9 @@ class RegisterEmailPage extends GetView<RegisterController> {
   }
 
   Widget get _buildNextButton {
-    return RegisterNextButton(onPressed: controller.onNextPage, title: "Next");
+    return RegisterNextButton(
+      onPressed: controller.onNextPage,
+      title: TranslateHelper.next,
+    );
   }
 }

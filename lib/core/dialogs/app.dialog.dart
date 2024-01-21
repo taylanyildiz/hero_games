@@ -1,8 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:hero_game/core/dialogs/widgets/widgets.dart';
+import '/core/dialogs/widgets/widgets.dart';
+import '/core/localization/translate.helper.dart';
 
 class AppDialog {
   /// Open dialog
@@ -33,9 +33,9 @@ class AppDialog {
   }
 
   static Future<void> logout(FutureOr<dynamic> Function() onBuild) async {
-    final result = await open(const ConfirmDialog(
-      title: "Logout",
-      description: "Are you sure to leave",
+    final result = await open(ConfirmDialog(
+      title: TranslateHelper.logout,
+      description: TranslateHelper.sureLogout,
     ));
     if (result == true) {
       loading(close: false, onBuild: onBuild);

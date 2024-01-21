@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/core/localization/translate.helper.dart';
 import '/register/validators/reigster.validator.dart';
 import '/register/data/register-caption.data.dart';
 import '/core/widgets/widgets.dart';
@@ -22,7 +23,7 @@ class RegisterPasswordPage extends GetView<RegisterController> {
               children: [
                 RegisterCaption(caption: passwordCaption),
                 TextOutlinedLabelField(
-                  label: "Password",
+                  label: TranslateHelper.password,
                   secret: true,
                   controller: controller.passwordController,
                   prefixIcon: const Icon(Icons.password),
@@ -30,7 +31,7 @@ class RegisterPasswordPage extends GetView<RegisterController> {
                 ),
                 const SizedBox(height: 10.0),
                 TextOutlinedLabelField(
-                  label: "Confirm Password",
+                  label: TranslateHelper.confirmPassword,
                   secret: true,
                   controller: controller.confPasswordController,
                   prefixIcon: const Icon(Icons.password),
@@ -46,6 +47,9 @@ class RegisterPasswordPage extends GetView<RegisterController> {
   }
 
   Widget get _buildNextButton {
-    return RegisterNextButton(onPressed: controller.onNextPage, title: "Next");
+    return RegisterNextButton(
+      onPressed: controller.onNextPage,
+      title: TranslateHelper.done,
+    );
   }
 }

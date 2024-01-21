@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/core/localization/translate.helper.dart';
 import '/register/validators/reigster.validator.dart';
 import '/register/data/register-caption.data.dart';
 import '/core/widgets/widgets.dart';
@@ -14,7 +15,6 @@ class RegisterInfoPage extends GetView<RegisterController> {
     return Scaffold(
       body: Form(
         key: controller.infoKey,
-        autovalidateMode: AutovalidateMode.onUserInteraction,
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(10.0),
           child: Column(
@@ -22,15 +22,15 @@ class RegisterInfoPage extends GetView<RegisterController> {
             children: [
               RegisterCaption(caption: infoCaption),
               TextOutlinedLabelField(
-                label: "Name",
+                label: TranslateHelper.name,
                 controller: controller.nameController,
                 prefixIcon: const Icon(Icons.person),
                 validator: RegisterValidator.nameValidator,
               ),
               const SizedBox(height: 10.0),
               TextOutlinedLabelField(
-                label: "Biography",
-                hintText: "Example: I am a developer",
+                label: TranslateHelper.biography,
+                hintText: TranslateHelper.biographyHint,
                 maxLines: 4,
                 minLines: 4,
                 controller: controller.bioController,
@@ -38,7 +38,7 @@ class RegisterInfoPage extends GetView<RegisterController> {
               ),
               const SizedBox(height: 10.0),
               ExpandableDateTimePicker(
-                label: "Birth Date",
+                label: TranslateHelper.birthDate,
                 onChanged: controller.onChangedBirthDate,
                 dateTime: controller.birtDate,
                 maxDate: DateTime.now(),
@@ -53,6 +53,9 @@ class RegisterInfoPage extends GetView<RegisterController> {
   }
 
   Widget get _buildNextButton {
-    return RegisterNextButton(onPressed: controller.onNextPage, title: "Next");
+    return RegisterNextButton(
+      onPressed: controller.onNextPage,
+      title: TranslateHelper.next,
+    );
   }
 }

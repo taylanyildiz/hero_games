@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '/core/localization/translate.helper.dart';
 
 class ConfirmDialog extends StatelessWidget {
   const ConfirmDialog({
@@ -38,12 +39,12 @@ class ConfirmDialog extends StatelessWidget {
         adaptiveAction(
           context: context,
           onPressed: () => Get.back(result: false),
-          child: const Text('Cancel'),
+          child: Text(TranslateHelper.cancel),
         ),
         adaptiveAction(
           context: context,
           onPressed: () => Get.back(result: true),
-          child: const Text('OK'),
+          child: Text(TranslateHelper.ok),
         ),
       ],
     );

@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:hero_game/splash/controllers/splash.controller.dart';
+import '/core/localization/translate.helper.dart';
+import '/splash/controllers/splash.controller.dart';
 import '/core/snackbar/app.snackbar.dart';
 import '/core/routes/app.routes.dart';
 import '/core/firebase/firebase-store.service.dart';
@@ -28,15 +29,15 @@ class FirebaseAuthService extends GetxService {
       );
       User user = credential.user!;
       await storeService.addUserInfo(user.uid, userModel.info!);
-      AppSnackbar.success("Registration Successed");
+      AppSnackbar.success(TranslateHelper.registrationSuccessed);
     } on FirebaseAuthException catch (e) {
-      String message = "Registration failed";
+      String message = TranslateHelper.registrationFailed;
       if (e.code == 'weak-password') {
         message = "The password provided is too weak";
       } else if (e.code == 'email-already-in-use') {
         message = 'The account already exists for that email.';
       }
-      AppSnackbar.error("Registration Failed", message);
+      AppSnackbar.error(TranslateHelper.registrationFailed, message);
     }
   }
 
@@ -47,13 +48,13 @@ class FirebaseAuthService extends GetxService {
         email: email,
         password: password,
       );
-      AppSnackbar.success("Login Successed");
+      AppSnackbar.success(TranslateHelper.loginSuccessed);
     } on FirebaseAuthException catch (e) {
       String descripton = 'No user found for that email.';
       if (e.code == 'wrong-password') {
         descripton = 'Wrong password provided for that user.';
       }
-      AppSnackbar.error("Login Failed", descripton);
+      AppSnackbar.error(TranslateHelper.loginFailed, descripton);
     }
   }
 
@@ -80,6 +81,6 @@ class FirebaseAuthService extends GetxService {
 
   Future<void> logout() async {
     await _instance.signOut();
-    AppSnackbar.success("Logout Successed");
+    AppSnackbar.success(TranslateHelper.logoutSuccessed);
   }
 }
