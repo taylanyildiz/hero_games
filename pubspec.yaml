@@ -1,0 +1,59 @@
+name: hero_game
+description: "Hero Games Flutter Application"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter_localizations:
+    sdk: flutter
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  font_awesome_flutter: ^10.6.0
+  get: ^4.6.6
+  logger: ^2.0.2+1
+  flutter_gen_runner: ^5.4.0 # `flutter packages pub run build_runner build`
+  build_runner: ^2.4.8
+  firebase_auth: ^4.16.0
+  firebase_core: ^2.24.2
+  cloud_firestore: ^4.14.0
+  flutter_cupertino_datetime_picker: ^3.0.0
+  expandable: ^5.0.1
+  intl: any
+  shimmer: ^3.0.0
+  equatable: ^2.0.5
+  flutter_native_splash: ^2.3.9 # `dart run flutter_native_splash:create`
+  flutter_launcher_icons: ^0.13.1 # `flutter pub run flutter_launcher_icons`
+  
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter_gen:
+  output: lib/gen/
+  line_length: 80
+
+flutter_native_splash:
+  fullscreen: true
+  color: "#ffffff"
+  image: assets/images/logo_splash.png
+
+flutter_icons:
+  ios: true
+  android: false
+  adaptive_icon_background: "#F5E9FF"
+  image_path: "assets/icons/launcher_icon.png"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
